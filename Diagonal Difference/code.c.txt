@@ -1,0 +1,31 @@
+int diagonalDifference(int arr_rows, int arr_columns, int** arr) 
+{
+    int sum1=0;
+    int sum2=0;
+    int sum=0;
+    for(int i =0 ;i< arr_rows;i++)
+    {
+        for(int j=0;j<arr_columns;j++)
+        {
+        if( i==j)
+         sum1+=arr[i][j]; 
+        }
+    }
+       for(int i=0;i< arr_rows ;i++)
+    {
+        for(int j=0;j<arr_columns;j++)
+        {
+          if (i + j == arr_rows - 1)
+        {
+            sum2+=arr[i][j];
+        }    
+        }  
+       } 
+           sum=sum1-sum2;
+       if(sum<0)
+       return sum*-1;
+       else 
+       return sum;
+    
+//return -1;
+}
